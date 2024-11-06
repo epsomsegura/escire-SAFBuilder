@@ -1,4 +1,4 @@
-# SAFBuilder - Item Packager from CSV
+# SAFBuilder - Item Packager from CSV (customized by eScire)
 
 A tool that turns content files and a metadata spreadsheet into a Simple Archive Format package, which easily allows for batch import to DSpace, an Institutional Repository.
 
@@ -69,6 +69,17 @@ SimpleArchiveFormat/
 
 You can then import the SimpleArchiveFormat directory into DSpace as-is (see https://wiki.duraspace.org/display/DSDOC5x/Importing+and+Exporting+Items+via+Simple+Archive+Format for further information). Or you can import the ZIP file into portions of DSpace that enable Batch Import from Zip files.
 
+# eScire customizations
+
+POM.xml updated to use with JAVA 17
+
+## Considerations to execute safbuilder.sh file
+You should execute this file using bash in Ubuntu/Debian if shell is your default system shell because content file is created with bash syntax.
+
+```
+bash ./path/to/file/safbuilder.sh -c src/sample_data/AAA_batch-metadata.csv -z
+```
+
 
 Other Things
 -----
@@ -83,3 +94,4 @@ Version History:
 * v3, v2, v1 - ./safbuilder.sh /path/to/parentDirectory file.csv
 
 Older versions of this tool required a space between the parent directory file path, and the filename of the CSV. The current version combines the path and the filename. It also allows the ability to ZIP the contents.
+
